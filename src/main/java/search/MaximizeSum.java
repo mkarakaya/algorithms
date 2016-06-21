@@ -11,11 +11,9 @@ import java.util.stream.Collectors;
  */
 public class MaximizeSum {
     public static void main(String[] args) throws FileNotFoundException {
-        long start = System.currentTimeMillis();
         Scanner in = new Scanner(new File("c:/temp/input14.txt"));
         int test = in.nextInt();
         for(int i=0;i<test;i++){
-
             int size = in.nextInt();
             double modulo = in.nextDouble();
             TreeSet<Double> set =new TreeSet<>();
@@ -60,9 +58,9 @@ public class MaximizeSum {
                 }
             }
             System.out.printf("%.0f\n", max);
+
         }
-        long end = System.currentTimeMillis();
-        System.out.println("time:"+(end-start));
+
     }
 
 }
