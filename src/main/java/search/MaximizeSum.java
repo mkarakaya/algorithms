@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * https://www.hackerrank.com/challenges/icecream-parlor
+ * https://www.hackerrank.com/challenges/maximize-sum
  * Created by p.bell on 19.06.2016.
  */
 public class MaximizeSum {
