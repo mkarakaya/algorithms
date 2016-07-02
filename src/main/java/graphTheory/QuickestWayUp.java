@@ -1,5 +1,7 @@
 package graphTheory;
 
+import graphTheory.model.Node;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -83,14 +85,4 @@ public class QuickestWayUp {
         }
         return node;
     }
-}
-class Node{
-    public Node(int index){
-        this.index=index;
-        this.neighbours=new int[6];
-        level=-1;
-    }
-    public int index;
-    public int[] neighbours;
-    public int level;
 }
