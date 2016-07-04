@@ -50,6 +50,6 @@ public class BotClean {
         String board[] = new String[5];
         for(int i=0;i<2;i++) pos[i] = in.nextInt();
         for(int i=0;i<5;i++) board[i] = in.next();
-        next_move(pos[0], pos[1], board);
+        next_move(pos[0], pos[1],-1,-1, board);
     }
 }
