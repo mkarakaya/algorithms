@@ -17,10 +17,8 @@ import java.net.URL;
  * Created by 212457624 on 04.07.2016.
  */
 public class StackExchangeQuestionClassifier {
-    public static boolean VALIDATE=false;
+    public static boolean VALIDATE=true;
     public static void main(String[] args) throws FileNotFoundException, ParseException {
-        Properties props = new Properties();
-        props.put("annotators", "tokenize, ssplit, pos, lemma");
         List<Datum<String,String>> trainingData = new ArrayList<>();
         JSONParser parser = new JSONParser();
         URL resource = StackExchangeQuestionClassifier.class.getClassLoader().getResource("training.json");
@@ -36,12 +34,6 @@ public class StackExchangeQuestionClassifier {
         addTraining(trainingData, parser, cin, cSize, datums,true);
 
         NBLinearClassifierFactory<String,String> factory = new NBLinearClassifierFactory<>();
-        //factory.setTuneSigmaCV(3);
-        //factory.useConjugateGradientAscent();
-        // Turn on per-iteration convergence updates
-        //factory.setVerbose(false);
-        //Small amount of smoothing
-        //factory.setSigma(10.0);
         LinearClassifier<String,String> classifier = factory.trainClassifier(trainingData);
         if(VALIDATE) {
             resource = StackExchangeQuestionClassifier.class.getClassLoader().getResource("validate.txt");
