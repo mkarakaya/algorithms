@@ -1,29 +1,14 @@
 package ml.sml;
 
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
-
-import java.util.function.Function;
-
-
-import edu.stanford.nlp.ling.Word;
 import edu.stanford.nlp.classify.LinearClassifier;
-import edu.stanford.nlp.classify.LinearClassifierFactory;
 import edu.stanford.nlp.classify.NBLinearClassifierFactory;
 import edu.stanford.nlp.ling.BasicDatum;
 import edu.stanford.nlp.ling.Datum;
-import edu.stanford.nlp.pipeline.Annotation;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import edu.stanford.nlp.process.PTBTokenizer;
-import edu.stanford.nlp.stats.Counter;
-import edu.stanford.nlp.trees.TreeLemmatizer;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
@@ -50,11 +35,11 @@ public class StackExchangeQuestionClassifier {
         cSize = Integer.parseInt(cin.nextLine().trim());
         addTraining(trainingData, parser, cin, cSize, datums,true);
 
-        LinearClassifierFactory<String,String> factory = new LinearClassifierFactory<>(true);
+        NBLinearClassifierFactory<String,String> factory = new NBLinearClassifierFactory<>();
         //factory.setTuneSigmaCV(3);
         //factory.useConjugateGradientAscent();
         // Turn on per-iteration convergence updates
-        factory.setVerbose(false);
+        //factory.setVerbose(false);
         //Small amount of smoothing
         //factory.setSigma(10.0);
         LinearClassifier<String,String> classifier = factory.trainClassifier(trainingData);
