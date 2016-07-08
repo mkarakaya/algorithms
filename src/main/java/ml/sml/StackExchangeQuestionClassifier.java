@@ -1,10 +1,25 @@
 package ml.sml;
 
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+import java.util.function.Function;
+
+
+import edu.stanford.nlp.ling.Word;
 import edu.stanford.nlp.classify.LinearClassifier;
 import edu.stanford.nlp.classify.LinearClassifierFactory;
+import edu.stanford.nlp.classify.NBLinearClassifierFactory;
 import edu.stanford.nlp.ling.BasicDatum;
 import edu.stanford.nlp.ling.Datum;
+import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.process.PTBTokenizer;
+import edu.stanford.nlp.stats.Counter;
+import edu.stanford.nlp.trees.TreeLemmatizer;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -12,16 +27,15 @@ import org.json.simple.parser.ParseException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 /**
  * Created by 212457624 on 04.07.2016.
  */
 public class StackExchangeQuestionClassifier {
-    public static boolean VALIDATE=true;
+    public static boolean VALIDATE=false;
     public static void main(String[] args) throws FileNotFoundException, ParseException {
+        Properties props = new Properties();
+        props.put("annotators", "tokenize, ssplit, pos, lemma");
         List<Datum<String,String>> trainingData = new ArrayList<>();
         JSONParser parser = new JSONParser();
         URL resource = StackExchangeQuestionClassifier.class.getClassLoader().getResource("training.json");
@@ -36,8 +50,9 @@ public class StackExchangeQuestionClassifier {
         cSize = Integer.parseInt(cin.nextLine().trim());
         addTraining(trainingData, parser, cin, cSize, datums,true);
 
-        LinearClassifierFactory<String,String> factory = new LinearClassifierFactory<>();
-        factory.useConjugateGradientAscent();
+        LinearClassifierFactory<String,String> factory = new LinearClassifierFactory<>(true);
+        //factory.setTuneSigmaCV(3);
+        //factory.useConjugateGradientAscent();
         // Turn on per-iteration convergence updates
         factory.setVerbose(false);
         //Small amount of smoothing
@@ -69,13 +84,16 @@ public class StackExchangeQuestionClassifier {
         for(int i=0;i<cSize;i++){
             JSONObject jsonObj = (JSONObject) parser.parse(cin.nextLine());
             List<String> features = new ArrayList<>();
-            features.add("question="+jsonObj.get("question"));
-            features.add("excerpt="+jsonObj.get("excerpt"));
+            String[] questions = jsonObj.get("question").toString().split(" ");
+            features.addAll(Arrays.asList(questions));
+            String[] excerpts = jsonObj.get("excerpt").toString().split(" ");
+            features.addAll(Arrays.asList(excerpts));
             BasicDatum datum= new BasicDatum(features,jsonObj.get("topic"));
             if(save) {
                 datums.add(datum);
+            }else {
+                trainingData.add(datum);
             }
-            trainingData.add(datum);
         }
     }
 }
