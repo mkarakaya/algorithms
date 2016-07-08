@@ -1,6 +1,10 @@
 package ml.sml;
 
 
+import edu.stanford.nlp.classify.LinearClassifier;
+import edu.stanford.nlp.classify.LinearClassifierFactory;
+import edu.stanford.nlp.ling.BasicDatum;
+import edu.stanford.nlp.ling.Datum;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -8,6 +12,8 @@ import org.json.simple.parser.ParseException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -20,16 +26,19 @@ public class StackExchangeQuestionClassifier {
         //Scanner in = new Scanner(System.in);
         int size = in.nextInt();
         int count=0;
+        List<Datum<String,String>> trainingData = new ArrayList<>();
         JSONParser parser = new JSONParser();
         while(count!=size) {
             String json = in.nextLine();
             if(!"".equals(json)) {
                 try {
+                    List<String> features = new ArrayList<>();
                     JSONObject jsonObj = (JSONObject) parser.parse(json);
-                    System.out.println(jsonObj.get("question"));
-                    if (jsonObj.get("question").equals("Step down switching regulator heating up with light loads")) {
-                        System.out.println("here");
-                    }
+                    features.add("question="+jsonObj.get("question"));
+                    features.add("excerpt="+jsonObj.get("excerpt"));
+                    trainingData.add(new BasicDatum(features,jsonObj.get("topic")));
+
+
                 }catch (Exception e){
                     System.out.println(e.getMessage());
                 }finally {
@@ -38,5 +47,30 @@ public class StackExchangeQuestionClassifier {
 
             }
         }
+        Scanner cin = new Scanner(System.in);
+        int cSize = cin.nextInt();
+        List<BasicDatum> datums=new ArrayList<>();
+        for(int i=0;i<cSize;i++){
+            JSONObject jsonObj = (JSONObject) parser.parse(cin.next());
+            List<String> features = new ArrayList<>();
+            features.add("question="+jsonObj.get("question"));
+            features.add("excerpt="+jsonObj.get("excerpt"));
+            BasicDatum datum= new BasicDatum(features,null);
+            datums.add(datum);
+            trainingData.add(datum);
+        }
+
+        LinearClassifierFactory<String,String> factory = new LinearClassifierFactory<>();
+        factory.useConjugateGradientAscent();
+        // Turn on per-iteration convergence updates
+        factory.setVerbose(true);
+        //Small amount of smoothing
+        factory.setSigma(10.0);
+        LinearClassifier<String,String> classifier = factory.trainClassifier(trainingData);
+        for(BasicDatum datum:datums){
+            System.out.println(classifier.classOf(datum));
+        }
+
+
     }
 }
