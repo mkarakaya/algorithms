@@ -1,2 +1,2 @@
 # algorithms
-Various solutions to algorithm problems (generally from hackerrank.com).
+Various solutions in Java to algorithm problems (generally from hackerrank.com).
