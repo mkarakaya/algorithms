@@ -1,6 +1,5 @@
 import junit.framework.TestCase;
-
-import java.util.Scanner;
+import search.Dijkstra;
 
 /**
  * Created by p.bell on 19.02.2016.
