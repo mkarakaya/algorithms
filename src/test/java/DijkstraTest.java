@@ -1,5 +1,5 @@
 import junit.framework.TestCase;
-import search.Dijkstra;
+import algorithms.search.Dijkstra;
 
 /**
  * Created by p.bell on 19.02.2016.

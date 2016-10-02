@@ -1,4 +1,4 @@
-import dynamicProgramming.MaxSubarray;
+import algorithms.dynamicProgramming.MaxSubarray;
 import junit.framework.TestCase;
 
 /**

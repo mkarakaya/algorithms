@@ -1,10 +1,6 @@
 import junit.framework.TestCase;
-import model.Node;
-import reverse.ReverseString;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import algorithms.model.Node;
+import algorithms.reverse.ReverseString;
 
 /**
  * Created by p.bell on 02.02.2016.
