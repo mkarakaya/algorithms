@@ -1,4 +1,4 @@
-package algorithms.search;
+package algorithms.sorting;
 
 import java.io.File;
 import java.io.FileNotFoundException;
