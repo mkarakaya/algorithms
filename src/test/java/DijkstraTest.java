@@ -1,5 +1,5 @@
 import junit.framework.TestCase;
-import algorithms.search.Dijkstra;
+import hackerrank.algorithms.search.Dijkstra;
 
 /**
  * Created by p.bell on 19.02.2016.

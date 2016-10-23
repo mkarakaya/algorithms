@@ -1,5 +1,5 @@
 import junit.framework.TestCase;
-import algorithms.reverse.Palindrome;
+import hackerrank.algorithms.reverse.Palindrome;
 
 /**
  * Created by p.bell on 02.02.2016.

@@ -1,6 +1,6 @@
 import junit.framework.TestCase;
-import algorithms.model.Node;
-import algorithms.reverse.ReverseString;
+import hackerrank.algorithms.model.Node;
+import hackerrank.algorithms.reverse.ReverseString;
 
 /**
  * Created by p.bell on 02.02.2016.

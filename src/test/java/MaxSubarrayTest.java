@@ -1,4 +1,4 @@
-import algorithms.dynamicProgramming.MaxSubarray;
+import hackerrank.algorithms.dynamicProgramming.MaxSubarray;
 import junit.framework.TestCase;
 
 /**
