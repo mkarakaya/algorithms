@@ -6,7 +6,7 @@ import java.util.*;
 
 /**
  * https://www.hackerrank.com/challenges/maximize-sum
- * Created by p.bell on 19.06.2016.
+ * Created by mokarakaya on 19.06.2016.
  */
 public class MaximizeSum {
     public static void main(String[] args) throws FileNotFoundException {

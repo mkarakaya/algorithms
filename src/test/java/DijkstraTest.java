@@ -2,7 +2,7 @@ import junit.framework.TestCase;
 import hackerrank.algorithms.search.Dijkstra;
 
 /**
- * Created by p.bell on 19.02.2016.
+ * Created by mokarakaya on 19.02.2016.
  */
 public class DijkstraTest extends TestCase {
 

@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- * Created by p.bell on 12.06.2016.
+ * Created by mokarakaya on 12.06.2016.
  * https://www.hackerrank.com/challenges/quicksort3
  */
 public class QuicksortInplace {

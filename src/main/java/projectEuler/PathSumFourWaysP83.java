@@ -1,6 +1,6 @@
 package projectEuler;
 
-import util.InputReader;
+import projectEuler.util.InputReader;
 
 import java.io.FileNotFoundException;
 import java.util.HashMap;

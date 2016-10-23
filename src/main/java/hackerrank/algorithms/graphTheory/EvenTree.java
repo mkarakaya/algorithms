@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 /**
- * Created by p.bell on 26.06.2016.
+ * Created by mokarakaya on 26.06.2016.
  * https://www.hackerrank.com/challenges/even-tree
  */
 public class EvenTree {

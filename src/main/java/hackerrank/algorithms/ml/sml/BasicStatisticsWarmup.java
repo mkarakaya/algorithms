@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 /**
- * Created by p.bell on 03.07.2016.
+ * Created by mokarakaya on 03.07.2016.
  */
 public class BasicStatisticsWarmup {
     public static void main(String[] args) throws FileNotFoundException {

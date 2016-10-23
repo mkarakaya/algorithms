@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
- * Created by p.bell on 18.08.2016.
+ * Created by mokarakaya on 18.08.2016.
  * this example folds a list by adding value of the the first element to rest of the list and removes the first element
  * until we have only one element in the list.
  * ex:

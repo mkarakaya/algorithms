@@ -6,7 +6,7 @@ import java.util.*;
 
 /**
  * https://www.hackerrank.com/challenges/missing-numbers
- * Created by p.bell on 19.06.2016.
+ * Created by mokarakaya on 19.06.2016.
  */
 public class MissingNumbers {
     public static void main(String[] args) throws FileNotFoundException {

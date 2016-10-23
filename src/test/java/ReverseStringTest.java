@@ -3,7 +3,7 @@ import hackerrank.algorithms.model.Node;
 import hackerrank.algorithms.reverse.ReverseString;
 
 /**
- * Created by p.bell on 02.02.2016.
+ * Created by mokarakaya on 02.02.2016.
  */
 public class ReverseStringTest extends TestCase{
 

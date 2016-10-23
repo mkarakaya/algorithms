@@ -3,7 +3,7 @@ package hackerrank.algorithms.sorting;
 import java.util.*;
 
 /**
- * Created by p.bell on 19.10.2016.
+ * Created by mokarakaya on 19.10.2016.
  */
 public class TheFullCountingSort {
     public static void main(String[] args) {

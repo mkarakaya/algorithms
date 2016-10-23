@@ -3,7 +3,7 @@ package hackerrank.algorithms.reverse;
 import hackerrank.algorithms.model.Node;
 
 /**
- * Created by p.bell on 02.02.2016.
+ * Created by mokarakaya on 02.02.2016.
  */
 public class ReverseString {
 

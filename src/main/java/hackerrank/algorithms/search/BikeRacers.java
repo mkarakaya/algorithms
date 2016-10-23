@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * Created by p.bell on 26.06.2016.
+ * Created by mokarakaya on 26.06.2016.
  */
 public class BikeRacers {
     public static void main(String[] args) throws FileNotFoundException {

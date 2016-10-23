@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 /**
- * Created by p.bell on 19.02.2016.
+ * Created by mokarakaya on 19.02.2016.
  */
 public class Dijkstra {
 

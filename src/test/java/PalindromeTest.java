@@ -2,7 +2,7 @@ import junit.framework.TestCase;
 import hackerrank.algorithms.reverse.Palindrome;
 
 /**
- * Created by p.bell on 02.02.2016.
+ * Created by mokarakaya on 02.02.2016.
  */
 public class PalindromeTest extends TestCase {
 

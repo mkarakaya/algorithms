@@ -2,7 +2,7 @@ package hackerrank.algorithms.dynamicProgramming;
 
 /**
  * https://en.wikipedia.org/wiki/Maximum_subarray_problem
- * Created by p.bell on 19.02.2016.
+ * Created by mokarakaya on 19.02.2016.
  */
 public class MaxSubarray {
     public int getMax(int[] numbers) {

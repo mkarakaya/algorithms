@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- * Created by p.bell on 11.06.2016.
+ * Created by mokarakaya on 11.06.2016.
  */
 public class CurrencyArbitrage {
     public static void main(String[] args) throws FileNotFoundException {

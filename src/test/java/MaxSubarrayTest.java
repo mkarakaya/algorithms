@@ -2,7 +2,7 @@ import hackerrank.algorithms.dynamicProgramming.MaxSubarray;
 import junit.framework.TestCase;
 
 /**
- * Created by p.bell on 20.02.2016.
+ * Created by mokarakaya on 20.02.2016.
  */
 public class MaxSubarrayTest  extends TestCase {
 

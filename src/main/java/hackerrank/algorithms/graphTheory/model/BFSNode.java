@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by p.bell on 02.02.2016.
+ * Created by mokarakaya on 02.02.2016.
  */
 public class BFSNode {
     public BFSNode(int index){
