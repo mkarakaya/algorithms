@@ -1,4 +1,4 @@
-package javaStream;
+package javaFeatures.stream;
 
 import java.util.Arrays;
 import java.util.List;
